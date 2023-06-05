@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import Logo from "../assets/logo.svg";
 import HolyLight from "../assets/holy.svg";
 import LinkedIn from "../assets/linkedin.svg";
@@ -20,12 +22,16 @@ export default function Prelogin() {
                         </div>
                     </div>
                     <div className="flex gap-x-[15px] text-[20px]">
-                        <div className="btn-primary w-[170px] h-[64px] ">
-                            Login
-                        </div>
-                        <div className="btn-primary w-[170px] h-[64px] ">
-                            Pricing  
-                        </div>
+                        <Link to={"/login"}>
+                            <div className="btn-primary w-[170px] h-[64px] ">
+                                Login
+                            </div>
+                        </Link>
+                        <Link to={"/pricing"}>
+                            <div className="btn-primary w-[170px] h-[64px] ">
+                                Pricing
+                            </div>
+                        </Link>  
                     </div> 
                 </div>
                 
@@ -34,9 +40,11 @@ export default function Prelogin() {
                         <div className="text-[75px] leading-[85px]">
                             Unlock the Power of Video Knowledge
                         </div>
-                        <div className="text-[25px] mt-[60px] ml-[50px] h-[70px] w-[235px] btn-primary">
-                            Get Started 
-                        </div>
+                        <Link to={"/login"}>
+                            <div className="text-[25px] mt-[60px] ml-[50px] h-[70px] w-[235px] btn-primary">
+                                Get Started 
+                            </div>
+                        </Link>
                     </div>
                     <div className='w-[60%] relative flex justify-center ml-[60px]'>
                         <img src={HolyLight} width={600} alt="Holy Light"/>
@@ -65,9 +73,11 @@ export default function Prelogin() {
                         <img src={HolyLight} width={250} alt="Holy Light"/>
                         <img className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-[200px]"  src="https://media-private.canva.com/lt3So/MAFkvflt3So/1/s.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJWF6QO3UH4PAAJ6Q%2F20230603%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230603T070224Z&X-Amz-Expires=30710&X-Amz-Signature=0598db77076ca659f580f18b9d43b88b6c6836f32d4846fafb664079b4c55297&X-Amz-SignedHeaders=host&response-expires=Sat%2C%2003%20Jun%202023%2015%3A34%3A14%20GMT" alt="youtube illustration" />
                     </div>
-                    <div className="btn-primary w-[200px] h-[64px] absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] text-[20px] ">
-                        Sign up now  
-                    </div>
+                    <Link to={"/login"}>
+                        <div className="btn-primary w-[200px] h-[64px] absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] text-[20px] ">
+                            Sign up now  
+                        </div>
+                    </Link>
                 </div>
 
             </segment>
@@ -113,9 +123,11 @@ export default function Prelogin() {
                     </div>
                 </div>
 
-                <div className="text-[25px]  h-[70px] w-[200px] btn-primary self-center">
-                    Try Free  
-                </div>
+                <Link to={"/login"} className="self-center">
+                    <div className="text-[25px]  h-[70px] w-[200px] btn-primary self-center">
+                        Try Free  
+                    </div>
+                </Link>
 
                 <div className="flex justify-between">
                     <div className=' relative flex justify-center ml-[-60px] '>
