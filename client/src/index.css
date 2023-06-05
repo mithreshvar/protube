@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "shapirit_bold";
+  src: url("../public/fonts/Shapirit/Shapirit Bold.otf");
+}
+
+@font-face {
+  font-family: "shapirit";
+  src: url("../public/fonts/Shapirit/Shapirit\ Regular.otf");
+}
+
+@font-face {
+  font-family: "shapirit_medium";
+  src: url("../public/fonts/Shapirit/Shapirit\ Medium.otf");
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gradient-to-r from-[#9340ff] to-[#ff3c5f] rounded-[50px] flex items-center justify-center cursor-pointer ;
+  }
+}
