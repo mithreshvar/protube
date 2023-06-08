@@ -1,7 +1,7 @@
 export default function Pricing () {
 
     return (
-        <body className="h-[100vh] flex flex-col relative box-border bg-[#101728] px-[150px] py-[50px] gap-y-[50px] overflow-hidden text-white font-shapirit_bold " >
+        <div className="h-[100vh] flex flex-col relative box-border bg-[#101728] px-[150px] py-[50px] gap-y-[50px] overflow-hidden text-white font-shapirit_bold " >
             <div className="text-[55px] text-center leading-[50px] ">Pricing</div>
             <div className="flex justify-around items-center">
 
@@ -57,6 +57,6 @@ export default function Pricing () {
                 </div>
 
             </div>
-        </body>
+        </div>
     );
 }

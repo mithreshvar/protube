@@ -1,22 +1,39 @@
 import { useState } from "react";
+import { UserAuth } from "../context/AuthContext";
 import HolyLight from "../assets/holy.svg";
+import { useNavigate } from "react-router-dom";
 
 export default function Home() {
 
     const [credits, setCredits] = useState(100);
     const [searchText, setSearchText] = useState("");
 
+    const { logout, user } = UserAuth();
+    const navigate = useNavigate();
+
     const onSearchTextChange = (event) => setSearchText(event.target.value);
 
+    const handleLogout = async () => {
+        try {
+            await logout()
+            navigate('/');
+            console.log("you are logged out!")
+        }catch (e) {
+            console.log(e.message);
+        }
+    }
 
     return (
-        <body className="h-[100vh] flex flex-col relative box-border bg-[#101728] px-[150px] py-[50px] overflow-hidden text-white font-shapirit_bold " >
+        <div className="h-[100vh] flex flex-col relative box-border bg-[#101728] px-[150px] py-[50px] overflow-hidden text-white font-shapirit_bold " >
             <div className="flex justify-between items-center text-[28px] ">
-                <div><span className="text-[#9340ff]">Welcome</span> User !!</div>
-                <div className="flex gap-x-[50px] items-center"> 
-                    <div><span className="text-[#9340ff]">Credits</span> : {credits}</div>
+                <div><span className="text-[#9340ff]">Welcome</span> {user.displayName} !!</div>
+                <div className="flex gap-x-[25px] items-center"> 
+                    <div className="text-[24px]"><span className="text-[#9340ff]">Credits</span> : {credits}</div>
                     <div className="btn-primary w-[170px] h-[64px] text-[20px]">
                         Buy Credits
+                    </div>
+                    <div className="btn-primary w-[170px] h-[64px] text-[20px]" onClick={handleLogout}>
+                        Log Out
                     </div>
                 </div>
             </div>
@@ -55,6 +72,6 @@ export default function Home() {
                 </div>
             </div>
             
-        </body>
+        </div>
     );
 }

@@ -11,8 +11,8 @@ export default function Prelogin() {
 
 
     return(
-        <body className="relative box-border bg-[#101728] px-[150px] overflow-hidden text-white font-shapirit_bold" >
-            <segment className=" h-[100vh] flex flex-col py-[50px] ">
+        <div className="relative box-border bg-[#101728] px-[150px] overflow-hidden text-white font-shapirit_bold" >
+            <div className=" h-[100vh] flex flex-col py-[50px] ">
                
                 <div className=" flex justify-between">
                     <div className="flex items-center gap-x-[10px]">
@@ -52,8 +52,8 @@ export default function Prelogin() {
                     </div>
                 </div>
 
-            </segment>
-            <segment className="h-[100vh] flex flex-col pt-[70px] ">
+            </div>
+            <div className="h-[100vh] flex flex-col pt-[70px] ">
 
                 <div className="flex gap-x-[20px]">
                     <img src={Logo} className='w-[45px] h-[33px] mt-[10px] ' alt="logo"/>
@@ -73,16 +73,16 @@ export default function Prelogin() {
                         <img src={HolyLight} width={250} alt="Holy Light"/>
                         <img className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-[200px]"  src="https://media-private.canva.com/lt3So/MAFkvflt3So/1/s.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJWF6QO3UH4PAAJ6Q%2F20230603%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230603T070224Z&X-Amz-Expires=30710&X-Amz-Signature=0598db77076ca659f580f18b9d43b88b6c6836f32d4846fafb664079b4c55297&X-Amz-SignedHeaders=host&response-expires=Sat%2C%2003%20Jun%202023%2015%3A34%3A14%20GMT" alt="youtube illustration" />
                     </div>
-                    <Link to={"/login"}>
+                    <Link to={"/signup"}>
                         <div className="btn-primary w-[200px] h-[64px] absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] text-[20px] ">
                             Sign up now  
                         </div>
                     </Link>
                 </div>
 
-            </segment>
+            </div>
 
-            <segment className="h-[100vh] flex flex-col pt-[30px] gap-y-[30px] ">
+            <div className="h-[100vh] flex flex-col pt-[30px] gap-y-[30px] ">
                 <div className='text-center text-[55px]'>Key Features</div>
                 <div className="flex gap-x-[60px] text-[18px]  " >
                     <div className="flex flex-col justify-around gap-y-[20px] ">
@@ -104,9 +104,9 @@ export default function Prelogin() {
                         <div className="flex flex-col  justify-center border-2 border-white p-[25px] rounded-[20px] text-center"> Our advanced recommendation engine understands your interests and preferences, delivering personalized video suggestions tailored to your needs. Discover new content that aligns with your interests and expand your knowledge in just a few clicks.</div>
                     </div>
                 </div>
-            </segment>
+            </div>
 
-            <segment className="h-[100vh] flex flex-col pt-[50px] gap-y-[20px] ">
+            <div className="h-[100vh] flex flex-col pt-[50px] gap-y-[20px] ">
                 <div className="flex items-center gap-x-[10px]">
                     <img src={Logo} className='w-[45px] h-[33px] ' alt="logo"/>
                     <div className="text-[30px] leading-[50px] text-[#9340ff] " >
@@ -123,7 +123,7 @@ export default function Prelogin() {
                     </div>
                 </div>
 
-                <Link to={"/login"} className="self-center">
+                <Link to={"/signup"} className="self-center">
                     <div className="text-[25px]  h-[70px] w-[200px] btn-primary self-center">
                         Try Free  
                     </div>
@@ -148,7 +148,7 @@ export default function Prelogin() {
                         </div>
                     </div>
                 </div>
-            </segment>
-        </body>
+            </div>
+        </div>
     );
 }
