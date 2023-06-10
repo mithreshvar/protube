@@ -7,6 +7,13 @@ import Insta from "../assets/insta.svg";
 import Fb from "../assets/fb.svg";
 import Twitter from "../assets/twitter.svg";
 
+import p1 from "../assets/p1.jpeg"
+import p2 from "../assets/p2.jpeg"
+import p3 from "../assets/p3.jpeg"
+import p4 from "../assets/p4.jpeg"
+import p5 from "../assets/p5.jpeg"
+
+
 export default function Prelogin() {
 
 
@@ -48,7 +55,7 @@ export default function Prelogin() {
                     </div>
                     <div className='w-[60%] relative flex justify-center ml-[60px]'>
                         <img src={HolyLight} width={600} alt="Holy Light"/>
-                        <img className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"  src="https://media-private.canva.com/PgrBM/MAFkvfPgrBM/1/s.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJWF6QO3UH4PAAJ6Q%2F20230602%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230602T120254Z&X-Amz-Expires=79416&X-Amz-Signature=d33c040c836f00cfed4ef6f4a671eaf38ddc9260fb2683c7121d8bc318e89398&X-Amz-SignedHeaders=host&response-expires=Sat%2C%2003%20Jun%202023%2010%3A06%3A30%20GMT" alt="youtube illustration" />
+                        <img className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"  src={p1} alt="youtube illustration" />
                     </div>
                 </div>
 
@@ -64,14 +71,14 @@ export default function Prelogin() {
                     <div className= "text-[25px] leading-[40px] text-center pl-[130px] font-shapirit_medium " >We understand that your <span className="text-[#9340ff]">time</span> is valuable, and that's why we've developed an innovative SAAS product that revolutionizes the way you <span className="text-[#9340ff]">consume</span> video content.</div>
                     <div className=' relative flex justify-center mr-[-50px]  '>
                         <img src={HolyLight} width={700} alt="Holy Light"/>
-                        <img className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"  src="https://media-private.canva.com/bgNRk/MAFkvGbgNRk/1/s.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJWF6QO3UH4PAAJ6Q%2F20230603%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230603T060411Z&X-Amz-Expires=34926&X-Amz-Signature=cba9f40f21b9fd888de46007d32fccb2c5deba911e557edef14e1debd5718bf0&X-Amz-SignedHeaders=host&response-expires=Sat%2C%2003%20Jun%202023%2015%3A46%3A17%20GMT" alt="youtube illustration" />
+                        <img className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"  src={p2} alt="youtube illustration" />
                     </div>
                 </div>
 
                 <div className="flex items-center mt-[-70px] relative ">
                     <div className=' relative flex shrink-0 justify-center ml-[-20px] w-[20%] '>
                         <img src={HolyLight} width={250} alt="Holy Light"/>
-                        <img className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-[200px]"  src="https://media-private.canva.com/lt3So/MAFkvflt3So/1/s.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJWF6QO3UH4PAAJ6Q%2F20230603%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230603T070224Z&X-Amz-Expires=30710&X-Amz-Signature=0598db77076ca659f580f18b9d43b88b6c6836f32d4846fafb664079b4c55297&X-Amz-SignedHeaders=host&response-expires=Sat%2C%2003%20Jun%202023%2015%3A34%3A14%20GMT" alt="youtube illustration" />
+                        <img className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-[200px]"  src={p3} alt="youtube illustration" />
                     </div>
                     <Link to={"/signup"}>
                         <div className="btn-primary w-[200px] h-[64px] absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] text-[20px] ">
@@ -119,7 +126,7 @@ export default function Prelogin() {
 
                     <div className=' relative flex justify-center mr-[-80px] mt-[-180px] '>
                         <img src={HolyLight} width={880} alt="Holy Light"/>
-                        <img className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-[178px] h-[178px] "  src="https://media-private.canva.com/eo8lQ/MAFkvbeo8lQ/1/s.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJWF6QO3UH4PAAJ6Q%2F20230602%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230602T175937Z&X-Amz-Expires=91827&X-Amz-Signature=196db2abd251b43d660d6ee8025f357c7450760c37a99c5c77de4f017812953b&X-Amz-SignedHeaders=host&response-expires=Sat%2C%2003%20Jun%202023%2019%3A30%3A04%20GMT" alt="youtube illustration" />
+                        <img className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-[178px] h-[178px] "  src={p4} alt="youtube illustration" />
                     </div>
                 </div>
 
@@ -132,7 +139,7 @@ export default function Prelogin() {
                 <div className="flex justify-between">
                     <div className=' relative flex justify-center ml-[-60px] '>
                         <img src={HolyLight} width={300} alt="Holy Light"/>
-                        <img className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-[226px] h-[150 px] "  src="https://media-private.canva.com/Uw5N4/MAFkvLUw5N4/1/s.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJWF6QO3UH4PAAJ6Q%2F20230603%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230603T144940Z&X-Amz-Expires=17525&X-Amz-Signature=78f719b4f73b1529849a9ec3c0492e84fe4bbe9c3026b14513e7ff5bc63e48e4&X-Amz-SignedHeaders=host&response-expires=Sat%2C%2003%20Jun%202023%2019%3A41%3A45%20GMT" alt="youtube illustration" />
+                        <img className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-[226px] h-[150 px] "  src={p5} alt="youtube illustration" />
                     </div>
 
                     <div className="flex flex-col w-[500px]  " >

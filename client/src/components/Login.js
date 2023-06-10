@@ -3,6 +3,7 @@ import { UserAuth } from "../context/AuthContext"
 import { Link, useNavigate } from "react-router-dom";
 
 import Dots from "../assets/dots.svg";
+import google from "../assets/google.jpeg"
 
 export default function Login() {
 
@@ -51,7 +52,7 @@ export default function Login() {
             <div className=" h-[500px] w-[600px] self-center flex flex-col bg-[#7141d1] rounded-[25px] px-[30px] pt-[20px] pb-[40px] items-center justify-around ">
                 <div className="mt-[10px] text-[40px]">Login to your Account</div>
                 <div className=" flex  items-center justify-center  gap-x-[10px] w-[260px] h-[42px] px-[20px] py-[10px] bg-white text-black rounded-[20px] font-shapirit_medium cursor-pointer" onClick={handleGoogleSignIn}>
-                    <img className="h-[25px] w-[25px] "  src="https://media-private.canva.com/brYxU/MAFk2MbrYxU/1/s.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJWF6QO3UH4PAAJ6Q%2F20230604%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230604T225305Z&X-Amz-Expires=56416&X-Amz-Signature=9723a1f6fe5474c38d165a119540d611e9eff8a3f86b0f3c56e96228a0672936&X-Amz-SignedHeaders=host&response-expires=Mon%2C%2005%20Jun%202023%2014%3A33%3A21%20GMT" alt="youtube illustration" />
+                    <img className="h-[25px] w-[25px] "  src={google} alt="youtube illustration" />
                     <div>Continue with Google</div>
                 </div>
                 <img src={Dots} className='w-[400px] h-[10px] ' alt=""/>

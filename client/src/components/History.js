@@ -4,7 +4,6 @@ import { UserAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 
 import Logo from "../assets/logo.svg";
-import Plus from "../assets/plus-icon.svg";
 
 
 export default function Summary() {
