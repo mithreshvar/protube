@@ -1,4 +1,9 @@
+import { Link } from "react-router-dom";
+import { UserAuth } from "../context/AuthContext";
+
 export default function Pricing () {
+
+    const { user } = UserAuth();
 
     return (
         <div className="h-[100vh] flex flex-col relative box-border bg-[#101728] px-[150px] py-[50px] gap-y-[50px] overflow-hidden text-white font-shapirit_bold " >
@@ -27,7 +32,9 @@ export default function Pricing () {
                         </div>
                     </div>
 
-                    <div className="h-[90px] w-[140px] bg-[#ff3c5f] rounded-[20px] text-[18px]  flex items-center justify-center cursor-pointer">Buy</div>
+                    <Link to={ user ? "" : "/signup" }>
+                        <div className="h-[45px] w-[140px] bg-[#ff3c5f] rounded-[20px] text-[18px]  flex items-center justify-center cursor-pointer">Buy</div>
+                    </Link>
                     
                 </div>
 
@@ -52,7 +59,9 @@ export default function Pricing () {
                         </div>
                     </div>
 
-                    <div className="h-[90px] w-[140px] bg-[#ff3c5f] rounded-[20px] text-[18px]  flex items-center justify-center cursor-pointer">Buy</div>
+                    <Link to={ user ? "" : "/signup" }>
+                        <div className="h-[45px] w-[140px] bg-[#ff3c5f] rounded-[20px] text-[18px]  flex items-center justify-center cursor-pointer">Buy</div>
+                    </Link>
 
                 </div>
 

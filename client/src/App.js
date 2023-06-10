@@ -6,6 +6,7 @@ import SignUp from "./components/SignUp";
 import { UserAuth } from "./context/AuthContext";
 import Home from "./components/Home";
 import Summary from "./components/Summary";
+import History from "./components/History";
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
       <Route path="/signup" element={ !user ? <SignUp/> : <Navigate to='/' /> } />
       <Route path="/login" element={ !user ? <Login/> : <Navigate to='/' /> } />
       { user && <Route path="/summary" element={<Summary/>} /> }
+      { user && <Route path="/history" element={<History/>} /> }
       <Route path="/pricing" element={<Pricing/>} />
     </Routes>
   );

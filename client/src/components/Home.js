@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { UserAuth } from "../context/AuthContext";
 import HolyLight from "../assets/holy.svg";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 export default function Home() {
 
@@ -29,9 +29,11 @@ export default function Home() {
                 <div><span className="text-[#9340ff]">Welcome</span> {user.displayName} !!</div>
                 <div className="flex gap-x-[25px] items-center"> 
                     <div className="text-[24px]"><span className="text-[#9340ff]">Credits</span> : {credits}</div>
-                    <div className="btn-primary w-[170px] h-[64px] text-[20px]">
-                        Buy Credits
-                    </div>
+                    <Link to={"/pricing"} >
+                        <div className="btn-primary w-[170px] h-[64px] text-[20px]">
+                            Buy Credits
+                        </div>
+                    </Link>
                     <div className="btn-primary w-[170px] h-[64px] text-[20px]" onClick={handleLogout}>
                         Log Out
                     </div>

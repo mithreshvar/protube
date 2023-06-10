@@ -10,11 +10,12 @@ function Points({children}) {
     );
 }
 
-export default function KeyPoints() {
+export default function KeyPoints({content}) {
   return (
     <div className="w-[600px] min-h-[300px] bg-[#9340ff] rounded-[40px] border-[5px] border-white self-center px-[40px] py-[30px] flex flex-col gap-y-[20px] ">
-        <Points>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</Points>
-        <Points>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</Points>
+      { content.map((point) => {
+        return (<Points >{point}</Points>);
+      }) }
     </div>
   )
 }
