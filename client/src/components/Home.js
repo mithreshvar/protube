@@ -33,12 +33,17 @@ export default function Home() {
                 <div><span className="text-[#9340ff]">Welcome</span> {user.displayName} !!</div>
                 <div className="flex gap-x-[25px] items-center"> 
                     <div className="text-[24px]"><span className="text-[#9340ff]">Credits</span> : {user?.credits}</div>
+                    <Link to={"/history"} >
+                        <div className="btn-primary w-[130px] h-[64px] text-[20px]">
+                            History
+                        </div>
+                    </Link>
                     <Link to={"/pricing"} >
                         <div className="btn-primary w-[170px] h-[64px] text-[20px]">
                             Buy Credits
                         </div>
                     </Link>
-                    <div className="btn-primary w-[170px] h-[64px] text-[20px]" onClick={handleLogout}>
+                    <div className="btn-primary w-[130px] h-[64px] text-[20px]" onClick={handleLogout}>
                         Log Out
                     </div>
                 </div>

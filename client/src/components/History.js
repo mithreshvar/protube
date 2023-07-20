@@ -61,9 +61,9 @@ export default function Summary() {
                 <div className=" flex justify-between">
                     <div className="flex items-center gap-x-[10px]">
                         <img src={Logo} className='w-[45px] h-[33px] ' alt="logo"/>
-                        <div className="text-[30px] leading-[50px] " >
+                        <Link to='/' className="text-[30px] leading-[50px] " >
                             Protube
-                        </div>
+                        </Link>
                     </div>
                     <div className="flex gap-x-[25px] items-center text-[24px]"> 
                         <div><span className="text-[#9340ff]">Credits</span> : {credits}</div>
