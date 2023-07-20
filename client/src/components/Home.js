@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef } from "react";
 import { UserAuth } from "../context/AuthContext";
 import HolyLight from "../assets/holy.svg";
 import { useNavigate, Link } from "react-router-dom";
@@ -8,14 +8,14 @@ import p5 from "../assets/p5.jpeg"
 
 
 export default function Home() {
-
-    const [credits, setCredits] = useState(100);
-    const [searchText, setSearchText] = useState("");
-
+    
+    const searchTextRef = useRef();
     const { logout, user } = UserAuth();
     const navigate = useNavigate();
 
-    const onSearchTextChange = (event) => setSearchText(event.target.value);
+    const handleGetSummary = () => {
+        navigate('/summary?search='+searchTextRef.current.value)
+    }
 
     const handleLogout = async () => {
         try {
@@ -32,7 +32,7 @@ export default function Home() {
             <div className="flex justify-between items-center text-[28px] ">
                 <div><span className="text-[#9340ff]">Welcome</span> {user.displayName} !!</div>
                 <div className="flex gap-x-[25px] items-center"> 
-                    <div className="text-[24px]"><span className="text-[#9340ff]">Credits</span> : {credits}</div>
+                    <div className="text-[24px]"><span className="text-[#9340ff]">Credits</span> : {user?.credits}</div>
                     <Link to={"/pricing"} >
                         <div className="btn-primary w-[170px] h-[64px] text-[20px]">
                             Buy Credits
@@ -62,14 +62,13 @@ export default function Home() {
                         <div className="mt-[10px]">AI Agent</div>
                     </div>
                     <input 
-                        className="w-full h-[45px] px-[20px] py-[10px] bg-white text-black font-shapirit_medium rounded-[20px] "
+                        className="w-full h-[45px] px-[20px] py-[10px] bg-white text-black overflow-x-scroll font-code_pro text-[18px] rounded-[20px] "
                         type="text"
                         placeholder="Enter YouTube video link"
-                        onChange={onSearchTextChange}
-                        value={searchText}
+                        ref={searchTextRef}
                     />
                     <div className="text-[30px] " >Credits : 25</div>
-                    <div className="h-[50px] w-[240px] bg-[#ff3c5f] rounded-[20px] text-[28px]  flex items-center justify-center cursor-pointer">Get Summary</div>
+                    <div className="h-[50px] w-[240px] bg-[#ff3c5f] rounded-[20px] text-[28px]  flex items-center justify-center cursor-pointer" onClick={handleGetSummary} >Get Summary</div>
                 </div>
 
                 <div className=' relative flex shrink-0 justify-center w-[250px] h-[250px] opacity-80 self-center mr-[-70px] '>

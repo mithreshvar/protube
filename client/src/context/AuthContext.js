@@ -1,11 +1,11 @@
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useContext, useEffect, useRef, useState } from 'react';
 import { 
     createUserWithEmailAndPassword, 
     signInWithEmailAndPassword, 
     signOut,
     onAuthStateChanged,
     GoogleAuthProvider,
-    signInWithPopup
+    signInWithPopup,
 } from 'firebase/auth';
 
 import { auth } from '../Firebase';
@@ -17,31 +17,118 @@ export const AuthContextProvider = ({children}) =>  {
     const [user, setUser] = useState({});
     const [loading, setLoading] = useState(true)
 
-    const createUser = (email, password) => {
-        return createUserWithEmailAndPassword (auth, email, password)
+    const createUser = async (email, password) => {
+        return createUserWithEmailAndPassword (auth, email, password);
+        // try {
+        //     let user = await createUserWithEmailAndPassword (auth, email, password);
+        //     let idToken = await user.user.getIdToken(true);
+        //     let response = await fetch('/api/user/login', {
+        //         method: "POST",
+        //         headers: { 'Authorization': `Bearer ${idToken}` },
+        //     });
+        //     const json = await response.json();
+
+        //     if (response.ok) {
+        //         setCredits(json.credits);
+        //     }
+        //     else {
+        //         console.log(json.error)
+        //     }
+        // }
+        // catch(err) {
+        //     console.log(err.message);
+        // }
     }
 
-    const login = (email, password) => {
+    const login = async (email, password) => {
         return signInWithEmailAndPassword (auth, email, password);
+        // try {
+        //     let user = await signInWithEmailAndPassword (auth, email, password);
+        //     let idToken = await user.user.getIdToken(true);
+        //     let response = await fetch('/api/user/login', {
+        //         method: "POST",
+        //         headers: { 'Authorization': `Bearer ${idToken}` },
+        //     });
+        //     const json = await response.json();
+
+        //     if (response.ok) {
+        //         setCredits(json.credits);
+        //     }
+        //     else {
+        //         console.log(json.error)
+        //     }
+        // }
+        // catch(err) {
+        //     console.log(err.message);
+        // }
     }
 
     const logout = () => {
         return signOut(auth);
     }
 
-    const googleSignIn = () => {
+    const googleSignIn = async () => {
         const provider = new GoogleAuthProvider();
-        signInWithPopup(auth, provider);
+        return signInWithPopup(auth, provider)
+        // try {
+        //     let user = await signInWithPopup(auth, provider);
+        //     let idToken = await user.user.getIdToken(true);
+        //     let response = await fetch('/api/user/login', {
+        //         method: "POST",
+        //         headers: { 'Authorization': `Bearer ${idToken}` },
+        //     });
+        //     const json = await response.json();
+
+        //     if (response.ok) {
+        //         setCredits(json.credits);
+        //     }
+        //     else {
+        //         console.log(json.error)
+        //     }
+        // }
+        // catch(err) {
+        //     console.log(err.message);
+        // }
     }
 
+    const count = useRef(0); //! remove on production
+
     useEffect(() => {
-        const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-            console.log(currentUser);
-            setUser(currentUser);
-            setLoading(false)
-        });
-        return unsubscribe
+        if (count.current !== 0) { //! remove on production
+            const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
+                if (currentUser){
+                    try {
+                        let idToken = await currentUser.getIdToken(true);
+                        let response = await fetch('http://localhost:8081/api/user/login', {
+                            method: "POST",
+                            headers: { 'Authorization': `Bearer ${idToken}` },
+                        });
+                        const json = await response.json();
+            
+                        if (response.ok) {
+                            console.log(currentUser)
+                            currentUser.credits = json.credits;
+                            setUser(currentUser);
+                            setLoading(false);
+                        }
+                        else {
+                            console.log(json.error)
+                        }
+                    }
+                    catch(err) {
+                        console.log(err.message);
+                    }
+                }
+                else {
+                    setUser(currentUser);
+                    setLoading(false);
+                }
+            });
+            return unsubscribe
+        }
+        count.current++; //! remove on production
     }, []);
+
 
     return (
         <UserContext.Provider value={{ user, createUser, logout, login, googleSignIn }}>

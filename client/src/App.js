@@ -18,7 +18,7 @@ function App() {
       { user ? <Route path="/" element={<Home/>} /> : <Route path="/" element={<Prelogin/>} />}
       <Route path="/signup" element={ !user ? <SignUp/> : <Navigate to='/' /> } />
       <Route path="/login" element={ !user ? <Login/> : <Navigate to='/' /> } />
-      { user && <Route path="/summary" element={<Summary/>} /> }
+      { user && <Route path="/summary/" element={<Summary/>} />}
       { user && <Route path="/history" element={<History/>} /> }
       <Route path="/pricing" element={<Pricing/>} />
     </Routes>

@@ -26,7 +26,7 @@ export default function SignUp() {
             try {
                 setLoading(true);
                 await createUser(emailRef.current.value,passwordRef.current.value)
-                navigate('/home')
+                navigate('/')
             }
             catch (error) {
                 console.log(error);

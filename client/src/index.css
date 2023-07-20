@@ -8,6 +8,11 @@
 }
 
 @font-face {
+  font-family: "code_pro";
+  src: url("../public/fonts/Code\ Pro\ Bold\ LC.otf");
+}
+
+@font-face {
   font-family: "shapirit";
   src: url("../public/fonts/Shapirit/Shapirit\ Regular.otf");
 }

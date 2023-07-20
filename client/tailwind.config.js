@@ -9,6 +9,7 @@ module.exports = {
         shapirit: ["shapirit"],
         shapirit_bold: ["shapirit_bold"],
         shapirit_medium: ["shapirit_medium"],
+        code_pro: ["code_pro"]
       },
     },
   },
