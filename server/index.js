@@ -12,11 +12,10 @@ const app = express();
 const port = process.env.REACT_APP_PORT;
 
 // middlewares
-app.use(cors(
-    {
-        origin: ['https://protube-backend.onrender.com']
-    }
-));
+app.use(cors());
+// {
+//     origin: ['https://protube-backend.onrender.com']
+// }
 app.use(express.json());
 
 
