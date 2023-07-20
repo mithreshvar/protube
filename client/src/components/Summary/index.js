@@ -27,7 +27,7 @@ export default function Summary() {
                 
                 try{
                     let idToken = await user.getIdToken(true)
-                    const response = await fetch(`http://localhost:8081/api/summary?search=${ytLinkId}`, {
+                    const response = await fetch(`https://protube-backend.onrender.com/api/summary?search=${ytLinkId}`, {
                         headers: { 'Authorization': `Bearer ${idToken}` },
                     });
                     const json = await response.json();

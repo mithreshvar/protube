@@ -16,13 +16,13 @@ export default function Summary() {
     const navigate = useNavigate();
 
 
-    const count = useRef(0); //! remove on production
+    // const count = useRef(0); //! remove on production
     useEffect(()=>{
-        if (count.current !== 0) { //! remove on production
+        // if (count.current !== 0) { //! remove on production
             (async function () {
                 try{
                     let idToken = await user.getIdToken(true)
-                    const response = await fetch("http://localhost:8081/api/summary/my", {
+                    const response = await fetch("https://protube-backend.onrender.com/api/summary/my", {
                         headers: { 'Authorization': `Bearer ${idToken}` },
                     })
                     console.log(response)
@@ -40,8 +40,8 @@ export default function Summary() {
                     console.log(err.message);
                 }
             })()
-        }
-        count.current++;  //! remove on production
+        // }
+        // count.current++;  //! remove on production
     },[])
 
     const handleLogout = async () => {

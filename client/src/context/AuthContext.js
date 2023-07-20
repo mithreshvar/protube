@@ -91,15 +91,15 @@ export const AuthContextProvider = ({children}) =>  {
         // }
     }
 
-    const count = useRef(0); //! remove on production
+    // const count = useRef(0); //! remove on production
 
     useEffect(() => {
-        if (count.current !== 0) { //! remove on production
+        // if (count.current !== 0) { //! remove on production
             const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
                 if (currentUser){
                     try {
                         let idToken = await currentUser.getIdToken(true);
-                        let response = await fetch('http://localhost:8081/api/user/login', {
+                        let response = await fetch('https://protube-backend.onrender.com/api/user/login', {
                             method: "POST",
                             headers: { 'Authorization': `Bearer ${idToken}` },
                         });
@@ -125,8 +125,8 @@ export const AuthContextProvider = ({children}) =>  {
                 }
             });
             return unsubscribe
-        }
-        count.current++; //! remove on production
+        // }
+        // count.current++; //! remove on production
     }, []);
 
 
