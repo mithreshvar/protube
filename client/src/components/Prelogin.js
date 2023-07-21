@@ -20,15 +20,15 @@ export default function Prelogin() {
     return(
         <div className="relative box-border bg-[#101728] px-[150px] overflow-hidden text-white font-shapirit_bold" >
             <div className=" h-[100vh] flex flex-col py-[50px] ">
-               
-                <div className=" flex justify-between">
-                    <div className="flex items-center gap-x-[10px]">
+                
+                <div className=" flex justify-between"> {/*Nav bar*/}
+                    <div className="flex items-center gap-x-[10px]"> {/*Logo*/}
                         <img src={Logo} className='w-[45px] h-[33px] ' alt="logo"/>
                         <div className="text-[30px] leading-[50px] " >
                             Protube
                         </div>
                     </div>
-                    <div className="flex gap-x-[15px] text-[20px]">
+                    <div className="flex gap-x-[15px] text-[20px]">{/*Login and Pricing buttons*/}
                         <Link to={"/login"}>
                             <div className="btn-primary w-[170px] h-[64px] ">
                                 Login
@@ -44,7 +44,7 @@ export default function Prelogin() {
                 
                 <div className="flex  w-[100%] pt-[30px]">
                     <div className="flex flex-col w-[40%] self-center">
-                        <div className="text-[75px] leading-[85px]">
+                        <div className=" text-[65px] 2xl:text-[75px] leading-[85px]">
                             Unlock the Power of Video Knowledge
                         </div>
                         <Link to={"/login"}>
