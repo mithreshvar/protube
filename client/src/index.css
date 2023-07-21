@@ -27,3 +27,7 @@
     @apply bg-gradient-to-r from-[#9340ff] to-[#ff3c5f] rounded-[50px] flex items-center justify-center cursor-pointer ;
   }
 }
+
+*{
+  box-sizing: border-box;
+}

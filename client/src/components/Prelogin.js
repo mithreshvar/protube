@@ -19,7 +19,7 @@ export default function Prelogin() {
 
     return(
         <div className="relative box-border bg-[#101728] px-[150px] overflow-hidden text-white font-shapirit_bold" >
-            <div className=" h-[100vh] flex flex-col py-[50px] ">
+            <div className=" h-[100vh] flex flex-col py-[30px] 2xl:py-[50px] ">
                 
                 <div className=" flex justify-between"> {/*Nav bar*/}
                     <div className="flex items-center gap-x-[10px]"> {/*Logo*/}
@@ -44,7 +44,7 @@ export default function Prelogin() {
                 
                 <div className="flex  w-[100%] pt-[30px]">
                     <div className="flex flex-col w-[40%] self-center">
-                        <div className=" text-[65px] 2xl:text-[75px] leading-[85px]">
+                        <div className=" text-[65px]  2xl:text-[75px] leading-[85px]  "> {/*[@media(min-width:1300px)]:text-[60px]*/}
                             Unlock the Power of Video Knowledge
                         </div>
                         <Link to={"/login"}>
