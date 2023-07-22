@@ -43,7 +43,7 @@ const getSummary = async (req, res) => {
 
             data.ytLink = ytLink;
 
-            let ytres = await fetch(`https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${req.query.search}&key=${REACT_APP_GOOGLE_API_KEY}`)
+            let ytres = await fetch(`https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${req.query.search}&key=${process.env.REACT_APP_GOOGLE_API_KEY}`)
             if (ytres.status == 200) {
                 const ytjson = await ytres.json();
                 title = ytjson.items[0].snippet.title;
